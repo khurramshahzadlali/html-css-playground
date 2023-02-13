@@ -58,9 +58,7 @@
         var css = document.getElementById('css-input').value;
         var output = document.getElementById('output');
         output.innerHTML = html;
-        var style = document.createElement('style');
-        style.innerHTML = css;
-        output.appendChild(style);
+        output.style.cssText = css;
  
       }
     </script>
