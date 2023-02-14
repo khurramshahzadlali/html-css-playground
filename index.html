@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Playground</title>
+    <link href="index.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <header>
+      <h1>HTML Playground</h1>
+      <p>A simple web app for experimenting with HTML, CSS, and JavaScript</p>
+    </header>
+    
+
+    <div class="playground">
+      <textarea id="html-input" oninput="runCode()" class="language-markup"></textarea>
+      <br>
+      <textarea id="css-input" oninput="runCode()" class="language-css"></textarea>
+      <br>
+      <textarea id="js-input" oninput="runCode()" class="language-javascript"></textarea>
+      <div id="output" class="language-markup"></div>
+    </div>
+    
+    <script>
+      function runCode() {
+        var html = document.getElementById('html-input').value;
+        var css = document.getElementById('css-input').value;
+        var js = document.getElementById('js-input').value;
+        var output = document.getElementById('output');
+        
+        output.innerHTML = html;
+        
+        var style = document.createElement('style');
+        style.innerHTML = css;
+        output.appendChild(style);
+        
+        var script = document.createElement('script');
+        script.innerHTML = js;
+        output.appendChild(script);
+      }
+    </script>
+  </body>
+</html>
