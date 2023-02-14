@@ -1,65 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Playground</title>
-    <style>
-      .playground {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-      }
-      #html-input{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 50%;
-        resize: none;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-      #css-input {
-        bottom: 0;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 50%;
-        height: 50%;
-        resize: none;
-        padding: 10px;
-        box-sizing: border-box;
- }
-      #output {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 100%;
-        height: 100vh;
-        padding: 10px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        overflow: auto;   
-      }
-    </style>
+    <link href="index.css" rel="stylesheet">
   </head>
+  
   <body>
+    <header>
+      <h1>HTML Playground</h1>
+      <p>A simple web app for experimenting with HTML, CSS, and JavaScript</p>
+    </header>
+    
+
     <div class="playground">
-      <textarea id="html-input" oninput="runCode()"></textarea>
+      <textarea id="html-input" oninput="runCode()" class="language-markup"></textarea>
       <br>
-      <textarea id="css-input" oninput="runCode()"></textarea>
-      <div id="output"></div>
+      <textarea id="css-input" oninput="runCode()" class="language-css"></textarea>
+      <br>
+      <textarea id="js-input" oninput="runCode()" class="language-javascript"></textarea>
+      <div id="output" class="language-markup"></div>
     </div>
+    
     <script>
       function runCode() {
         var html = document.getElementById('html-input').value;
         var css = document.getElementById('css-input').value;
+        var js = document.getElementById('js-input').value;
         var output = document.getElementById('output');
+        
         output.innerHTML = html;
-        output.style.cssText = css;
- 
+        
+        var style = document.createElement('style');
+        style.innerHTML = css;
+        output.appendChild(style);
+        
+        var script = document.createElement('script');
+        script.innerHTML = js;
+        output.appendChild(script);
       }
     </script>
   </body>
