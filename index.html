@@ -1,43 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>HTML Playground</title>
-    <link href="index.css" rel="stylesheet">
-  </head>
-  
-  <body>
-    <header>
-      <h1>HTML Playground</h1>
-      <p>A simple web app for experimenting with HTML, CSS, and JavaScript</p>
-    </header>
-    
-
-    <div class="playground">
-      <textarea id="html-input" oninput="runCode()" class="language-markup"></textarea>
-      <br>
-      <textarea id="css-input" oninput="runCode()" class="language-css"></textarea>
-      <br>
-      <textarea id="js-input" oninput="runCode()" class="language-javascript"></textarea>
-      <div id="output" class="language-markup"></div>
-    </div>
-    
-    <script>
-      function runCode() {
-        var html = document.getElementById('html-input').value;
-        var css = document.getElementById('css-input').value;
-        var js = document.getElementById('js-input').value;
-        var output = document.getElementById('output');
-        
-        output.innerHTML = html;
-        
-        var style = document.createElement('style');
-        style.innerHTML = css;
-        output.appendChild(style);
-        
-        var script = document.createElement('script');
-        script.innerHTML = js;
-        output.appendChild(script);
-      }
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML/CSS/JS Playground</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <nav>
+    <button class="active" data-language="html">HTML</button>
+    <button data-language="css">CSS</button>
+    <button data-language="js">JavaScript</button>
+  </nav>
+  <nav class="livepreview">
+    <h3>Live Preview</h3>
+  </nav>
+  <main>
+    <textarea id="html-input" placeholder="Enter your HTML code here"></textarea>
+    <textarea id="css-input" class="hidden" placeholder="Enter your CSS code here"></textarea>
+    <textarea id="js-input" class="hidden" placeholder="Enter your JavaScript code here"></textarea>
+    <iframe id="output"></iframe>
+  </main>
+  <script src="index.js"></script>
+</body>
 </html>
