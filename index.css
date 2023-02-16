@@ -122,9 +122,8 @@ iframe {
 }
 textarea {
     position: absolute;
- 
   width: 100%;
-  top: calc(60px+50% - 60px);
+  top: 50%;
   height: 50%;
   padding: 10px;
   font-size: 16px;
