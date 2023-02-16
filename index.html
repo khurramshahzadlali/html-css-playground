@@ -5,8 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML/CSS/JS Playground</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.63.0/lib/codemirror.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.63.0/theme/dracula.css">
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.0/lib/codemirror.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.0/mode/htmlmixed/htmlmixed.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.0/mode/css/css.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.0/mode/javascript/javascript.js"></script>
+<script>CodeMirror.fromTextArea(document.getElementById("html-input"), { mode: "htmlmixed", theme: "dracula" });</script>
+<script>CodeMirror.fromTextArea(document.getElementById("css-input"), { mode: "css", theme: "dracula" });</script>
+<script>CodeMirror.fromTextArea(document.getElementById("js-input"), { mode: "javascript", theme: "dracula" });</script>
 </head>
 <body>
   <nav>
@@ -24,15 +31,5 @@
     <iframe id="output"></iframe>
   </main>
   <script src="index.js"></script>
-  <script src="prism.js"></script>
-  <script>
-    // Initialize Prism with the appropriate settings
-    Prism.highlightAll();
-
-    // Bind Prism to the input fields
-    Prism.highlightElement(document.getElementById("html-input"));
-    Prism.highlightElement(document.getElementById("css-input"));
-    Prism.highlightElement(document.getElementById("js-input"));
-  </script>
 </body>
 </html>
