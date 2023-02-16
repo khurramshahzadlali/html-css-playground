@@ -34,13 +34,13 @@ function retrieveFromLocalStorage() {
   cssTextarea.value = savedCssCode || "";
   jsTextarea.value = savedJsCode || "";
 }
-
+/*
 retrieveFromLocalStorage();
 
 function handleButtonClick(event) {
   const clickedButton = event.target;
   const language = clickedButton.dataset.language;
-
+*/
   // Hide all textareas
   htmlTextarea.classList.add("hidden");
   cssTextarea.classList.add("hidden");
