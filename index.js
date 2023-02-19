@@ -34,11 +34,13 @@ function retrieveFromLocalStorage() {
   cssTextarea.value = savedCssCode || "";
   jsTextarea.value = savedJsCode || "";
 }
+
 retrieveFromLocalStorage();
 
 function handleButtonClick(event) {
   const clickedButton = event.target;
   const language = clickedButton.dataset.language;
+
   // Hide all textareas
   htmlTextarea.classList.add("hidden");
   cssTextarea.classList.add("hidden");
@@ -87,3 +89,24 @@ jsTextarea.addEventListener("input", () => {
 
 // Update the output initially
 updateOutput();
+
+const copyBtn = document.getElementById("copy-btn");
+const htmlInput = document.getElementById("html-input");
+const cssInput = document.getElementById("css-input");
+const jsInput = document.getElementById("js-input");
+
+copyBtn.addEventListener("click", function () {
+  if (document.querySelector(".active").dataset.language === "html") {
+    htmlInput.select();
+    document.execCommand("copy");
+    alert("HTML code copied to clipboard!");
+  } else if (document.querySelector(".active").dataset.language === "css") {
+    cssInput.select();
+    document.execCommand("copy");
+    alert("CSS code copied to clipboard!");
+  } else if (document.querySelector(".active").dataset.language === "js") {
+    jsInput.select();
+    document.execCommand("copy");
+    alert("JavaScript code copied to clipboard!");
+  }
+});
