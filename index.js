@@ -110,11 +110,3 @@ copyBtn.addEventListener("click", function () {
     alert("JavaScript code copied to clipboard!");
   }
 });
-
-const clearBtn = document.getElementById("clear-btn");
-
-clearBtn.addEventListener("click", function () {
-  htmlInput.value = "";
-  cssInput.value = "";
-  jsInput.value = "";
-});
