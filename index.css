@@ -62,14 +62,14 @@ nav button.active {
 
 main {
   display: flex;
-  height: calc(100% - 90px);
+  height: calc(100% - 40px);
 }
 
 textarea {
     position: absolute;
   width: 50%;
   top: 90px;
-  height: calc(100% - 90px);
+  height: calc(100% - 40px);
   padding: 10px;
   font-size: 16px;
   line-height: 1.5;
@@ -98,7 +98,7 @@ iframe {
   width: 50%;
   position: absolute;
   top: 90px;
-  height: calc(100% - 90px);
+  height: calc(100% - 40px);
   position: absolute;
   left: 50%;
   border: none;
@@ -140,8 +140,8 @@ iframe {
   iframe {
   width: 100%;
   position: absolute;
-  top: 90px;
-  height: calc(50% - 90px);
+  top: 40px;
+  height: calc(50% - 40px);
   position: absolute;
   left: 0;
   border: none;
