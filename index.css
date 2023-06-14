@@ -30,7 +30,7 @@ left: 0;
     position: absolute;
     left: 50%;
     width: 50%;
-    height: 60px;
+    height: 40px;
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -45,15 +45,15 @@ left: 0;
   }
 nav button {
   margin: 0 10px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   background-color: #007aff;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
-  width: 150px;
+  width: 100px;
 }
 
 nav button.active {
