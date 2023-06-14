@@ -16,7 +16,7 @@ width: 100%;
 }
 nav {
 position: absolute;
-top: 30px;
+top: 0px;
 left: 0;
   width: 50%;
   height: 40px;
@@ -63,7 +63,7 @@ nav button.active {
 
 main {
   display: flex;
-  height: calc(100% - 40px);
+  height: 100%;
 }
 
 textarea {
@@ -110,8 +110,8 @@ iframe {
 
 .copy-btn {
   position: absolute;
-  top: 100px;
-  right: 10px;
+  top: 45px;
+  right: 5px;
   padding: 5px 10px;
   background-color: #007aff;
   color: #fff;
@@ -148,7 +148,7 @@ iframe {
   border: none;
 }
 textarea {
-    position: absolute;
+  position: absolute;
   width: 100%;
   top: 50%;
   height: 50%;
