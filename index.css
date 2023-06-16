@@ -20,10 +20,12 @@ top: 0px;
 left: 0;
   width: 50%;
   height: 40px;
-  background-color: #333;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .livepreview {
@@ -31,34 +33,36 @@ left: 0;
     left: 50%;
     width: 50%;
     height: 40px;
-    background-color: #333;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   h3 {
-    background: #4CAF50;
-    color: #f1f1f1;
+    background:black;
+    color:white;
     padding: 5px 15px;
-    border-radius: 2px;
+    border: 1px solid black;
     text-align: center;
     font-size: 80%;
   }
 nav button {
   margin: 0 10px;
   padding: 5px 10px;
-  background-color: #007aff;
+  background-color: white;
   border: none;
-  color: white;
+  color: #333;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+ 
   width: 100px;
+ 
 }
 
 nav button.active {
-  background-color:#4CAF50;
+  background-color:black;
+  color: white;
 }
 
 main {
@@ -75,7 +79,7 @@ textarea {
   font-size: 14px;
   line-height: 1.5;
   border: none;
-  border-right: 2px solid #ccc;
+  border-right: 1px solid black;
   resize: none;
   color: #333;
 }
@@ -83,7 +87,7 @@ textarea {
 textarea:focus {
   outline: none;
 }
-
+/*
 #html-input {
   background-color: azure;
 }
@@ -95,7 +99,7 @@ textarea:focus {
 #js-input {
   background-color: lemonchiffon;
 }
-
+*/
 iframe {
   width: 50%;
   position: absolute;
@@ -121,7 +125,7 @@ iframe {
   z-index: 1;
 }
 .copy-btn:hover {
-  background-color: yellow;
+  background-color: grey;
 }
 
 
