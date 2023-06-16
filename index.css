@@ -71,12 +71,13 @@ textarea {
   width: 50%;
   top: 40px;
   height: calc(100% - 40px);
-  padding: 10px;
-  font-size: 16px;
+  padding: 20px;
+  font-size: 20px;
   line-height: 1.5;
   border: none;
   border-right: 2px solid #ccc;
   resize: none;
+  color: #333;
 }
 
 textarea:focus {
@@ -92,7 +93,7 @@ textarea:focus {
 }
 
 #js-input {
-  background-color: lightyellow;
+  background-color: lemonchiffon;
 }
 
 iframe {
@@ -110,23 +111,21 @@ iframe {
 
 .copy-btn {
   position: absolute;
-  top: 45px;
-  right: 5px;
-  padding: 5px 10px;
-  background-color: #007aff;
-  color: #fff;
+  top: 40px;
+  left: 0px;
+  padding: 5px 5px;
+  background-color: transparent;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   z-index: 1;
 }
 .copy-btn:hover {
-  background-color: #4CAF50;
+  background-color: yellow;
 }
 
 
-/* Media query for smaller screens */
-
+/* Media query for smaller screens 
 @media only screen and (max-width: 767px) {
  @media (max-width: 768px) {
   nav {
@@ -161,3 +160,4 @@ textarea {
 }
 }
 }
+*/
