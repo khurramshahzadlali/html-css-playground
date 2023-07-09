@@ -67,10 +67,6 @@ iframe {
   border: none;
 }
 
-.left {
-  border-right: 3px solid darkgrey;
-}
-
 textarea {
   position: absolute;
   height: 100%;
@@ -103,7 +99,7 @@ textarea:focus {
   z-index: 1;
 }
 .copy-btn:hover {
-  background-color: grey;
+  background-color: darkorchid;
 }
 
 iframe {
