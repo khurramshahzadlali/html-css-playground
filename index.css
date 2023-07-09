@@ -15,12 +15,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
   height: 40px;
-  background-color: darkgrey;
 }
 h3 {
-  background:black;
+  background: darkorchid;
   color:white;
   padding: 5px 10px;
   text-align: center;
@@ -40,7 +38,7 @@ h3 {
 }
 
 .heading button.active {
-  background-color:black;
+  background-color: darkorchid;
   color: white;
 }
 
@@ -70,9 +68,8 @@ iframe {
 }
 
 .left {
-  border-right: 3px solid darkgray;
+  border-right: 3px solid darkgrey;
 }
-
 
 textarea {
   position: absolute;
@@ -82,7 +79,7 @@ textarea {
   font-size: 14px;
   border: none;
   resize: none;
-  color: #333;
+  color: black;
 }
 
 textarea:focus {
