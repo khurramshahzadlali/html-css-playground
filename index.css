@@ -3,83 +3,83 @@
 }
 
 body {
-  margin: 0;
+  margin: 2px;
   padding: 0;
   height: 100vh;
   font-family: Arial, sans-serif;
+  overflow: hidden;
 }
-header {
-  position: absolute;
-  top: -20px;
-height: 30px;
-width: 100%;
-}
-nav {
-position: absolute;
-top: 0px;
-left: 0;
-  width: 50%;
-  height: 40px;
-  background-color: white;
+
+
+.heading {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid black;
   border-bottom: 1px solid black;
+  height: 40px;
+}
+h3 {
+  background:black;
+  color:white;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 80%;
 }
 
-.livepreview {
-    position: absolute;
-    left: 50%;
-    width: 50%;
-    height: 40px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  h3 {
-    background:black;
-    color:white;
-    padding: 5px 15px;
-    border: 1px solid black;
-    text-align: center;
-    font-size: 80%;
-  }
-nav button {
+.heading button {
   margin: 0 10px;
-  padding: 5px 10px;
+  padding: 5px 15px;
   background-color: white;
   border: none;
   color: #333;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
- 
   width: 100px;
- 
 }
 
-nav button.active {
+.heading button.active {
   background-color:black;
   color: white;
 }
 
-main {
+.instructions-preview {
   display: flex;
   height: 100%;
 }
 
+.instructions, .preview {
+width: 50%;
+display: flex;
+flex-direction: column;
+height: 100%;
+}
+
+.display {
+  position: relative;
+  width: 100%;
+  padding: 2px;
+  height: 90vh;
+  overflow: hidden;
+}
+
+
+iframe {
+  border: none;
+}
+
+.left {
+  border-right: 1px solid black;
+}
+
+
 textarea {
-    position: absolute;
-  width: 50%;
-  top: 40px;
-  height: calc(100% - 40px);
+  position: absolute;
+  height: 100%;
+  width: 100%;
   padding: 20px;
   font-size: 14px;
-  line-height: 1.5;
   border: none;
-  border-right: 1px solid black;
   resize: none;
   color: #333;
 }
@@ -87,38 +87,17 @@ textarea {
 textarea:focus {
   outline: none;
 }
-/*
-#html-input {
-  background-color: azure;
-}
 
-#css-input {
-  background-color: honeydew;
-}
 
-#js-input {
-  background-color: lemonchiffon;
-}
-*/
-iframe {
-  width: 50%;
-  position: absolute;
-  top: 40px;
-  height: calc(100% - 40px);
-  position: absolute;
-  left: 50%;
-  border: none;
-  padding: 2px;
-}
 .hidden {
   display: none;
 }
 
 .copy-btn {
   position: absolute;
-  top: 40px;
+  top: 5px;
   left: 0px;
-  padding: 5px 5px;
+  padding: 4px 4px;
   background-color: transparent;
   border: none;
   border-radius: 5px;
@@ -129,6 +108,12 @@ iframe {
   background-color: grey;
 }
 
+iframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: none;
+}
 
 /* Media query for smaller screens 
 @media only screen and (max-width: 767px) {

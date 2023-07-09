@@ -10,25 +10,29 @@
 
 </head>
 <body>
-  <!---
-  <header><h3>HTML,CSS and JavaScript Playground</h3></header>
--->
-  <nav>
-    <button class="active" data-language="html">HTML</button>  
-    <button data-language="css">CSS</button>
-    <button data-language="js">JavaScript</button>
-  </nav>
-  <nav class="livepreview">
-   
-    <h3>Live Preview</h3>
-   
- </nav>
-  <main>
+ <div class="instructions-preview">
+  <div class="instructions">
+   <div class="heading left">
+   <button class="active" data-language="html">HTML</button>  
+   <button data-language="css">CSS</button>
+   <button data-language="js">JavaScript</button>
+</div>
+  <div class="display left">
     <textarea id="html-input" placeholder="Enter your HTML code here" spellcheck="false"></textarea>
       <button id="copy-btn" class="copy-btn"><img src="copy.png" alt="copy" width="75%"></button>
     <textarea id="css-input" class="editor hidden" placeholder="Enter your CSS code here" spellcheck="false"></textarea>
     <textarea id="js-input" class="editor hidden" placeholder="Enter your JavaScript code here" spellcheck="false"></textarea>
+  </div>
+  </div>
+  <div class="preview">  
+    <div class="heading">
+    <h3>Live Preview</h3>
+  </div>
+  <div class="display">
     <iframe id="output"></iframe>
+  </div>
+  </div>
+</div>
   </main>
   <script src="index.js"></script>
   </body>

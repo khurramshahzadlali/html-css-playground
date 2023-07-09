@@ -2,7 +2,7 @@ const htmlTextarea = document.getElementById("html-input");
 const cssTextarea = document.getElementById("css-input");
 const jsTextarea = document.getElementById("js-input");
 const outputFrame = document.getElementById("output");
-const buttons = document.querySelectorAll("nav button");
+const buttons = document.querySelectorAll(".heading button");
 
 let htmlCode = htmlTextarea.value;
 let cssCode = cssTextarea.value;
