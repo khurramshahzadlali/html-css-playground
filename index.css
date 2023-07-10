@@ -73,9 +73,11 @@ textarea {
   width: 100%;
   padding: 20px;
   font-size: 14px;
+  font-weight: bold;
   border: none;
   resize: none;
   color: black;
+  background-color: #F6EEFF;
 }
 
 textarea:focus {
