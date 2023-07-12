@@ -1,39 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 10px;
+      height: 100vh;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      margin-top: -14px;
+    }
+
+    h3 {
+      background: darkorchid;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      font-size: 80%;
+      text-transform: uppercase;
+    }
+
+    .heading button {
+      margin: 0 10px;
+      padding: 5px 15px;
+      background-color: white;
+      border: none;
+      color: #333;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100px;
+    }
+
+    .heading button.active {
+      background-color: darkorchid;
+      color: white;
+    }
+
+    .container {
+      margin-top: -7px;
+      display: flex;
+      flex-direction: column;
+      height: 94vh;
+    }
+
+    .divider {
+      height: 5px;
+      background-color: darkorchid;
+      cursor: row-resize;
+    }
+
+    .section {
+      flex: 1;
+      overflow: auto;
+      height: 100%;
+      user-select: none;
+    }
+
+    .display1 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      font-weight: bold;
+      border: none;
+      resize: none;
+      color: black;
+      background-color: #F6EEFF;
+      overflow: hidden;
+    }
+
+    .display3 {
+      position: static;
+      width: 100%;
+      height: auto;
+      resize: none;
+      color: black;
+    }
+
+    textarea {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      resize: none;
+      color: black;
+      background-color: #F6EEFF;
+      border: none;
+    }
+
+    textarea:focus {
+      outline: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      resize: none;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 5px;
+      left: 0px;
+      padding: 4px 4px;
+      background-color: transparent;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .copy-btn:hover {
+      background-color: darkorchid;
+    }
+
+  </style>
   <link rel="stylesheet" href="index.css">
-  <title>HTML/CSS/JS Playground</title>
-
-
 </head>
 <body>
- <div class="instructions-preview">
-  <div class="instructions">
-   <div class="heading left">
-   <button class="active" data-language="html">HTML</button>  
-   <button data-language="css">CSS</button>
-   <button data-language="js">JavaScript</button>
-</div>
-  <div class="display left">
-    <textarea id="html-input" placeholder="Enter your HTML code here" spellcheck="false"></textarea>
-      <button id="copy-btn" class="copy-btn"><img src="copy.png" alt="copy" width="75%"></button>
-    <textarea id="css-input" class="editor hidden" placeholder="Enter your CSS code here" spellcheck="false"></textarea>
-    <textarea id="js-input" class="editor hidden" placeholder="Enter your JavaScript code here" spellcheck="false"></textarea>
+  <header class="heading">
+    <h3>Playground</h3>
+  </header>
+  <div class="heading left">
+    <button class="active" data-language="html">HTML</button>  
+    <button data-language="css">CSS</button>
+    <button data-language="js">JavaScript</button>
   </div>
+  <div class="divider" onmousedown="startResize(event)"></div>
+
+  <div class="container">
+    <div class="section">
+      <!-- Content of the first portion -->
+      <div class="display1">
+        <textarea id="html-input" placeholder="Enter your HTML code here" spellcheck="false"></textarea>
+        <button id="copy-btn" class="copy-btn">
+          <img src="copy.png" alt="copy" width="75%">
+        </button>
+        <textarea id="css-input" class="editor hidden" placeholder="Enter your CSS code here" spellcheck="false"></textarea>
+        <textarea id="js-input" class="editor hidden" placeholder="Enter your JavaScript code here" spellcheck="false"></textarea>
+      </div>
+    </div>
+
+    <div class="divider" onmousedown="startResize(event)"></div>
+    <div class="section">
+      <!-- Content of the second portion -->
+      <h3>Live Preview</h3>
+      <div class="display3">
+        <iframe id="output"></iframe>  
+      </div>
+    </div>
   </div>
-  <div class="preview">  
-    <div class="heading">
-    <h3>Live Preview</h3>
-  </div>
-  <div class="display">
-    <iframe id="output"></iframe>
-  </div>
-  </div>
-</div>
-  </main>
+
+   <script>
+
+  function startResize(event) {
+    const divider = event.target;
+    const container = divider.parentElement;
+    const startY = event.clientY || event.touches[0].clientY;
+    const startHeight = parseFloat(getComputedStyle(container).height);
+    const maxHeight = container.parentElement.clientHeight;
+    const minHeight = 100; // Set a minimum height for the first section
+
+    function handleResize(event) {
+      event.preventDefault();
+      const clientY = event.clientY || event.touches[0].clientY;
+      const deltaY = clientY - startY;
+      const newHeight = startHeight + deltaY;
+
+      if (newHeight > minHeight && newHeight < maxHeight) {
+        container.style.height = `${newHeight}px`;
+      }
+    }
+
+    function stopResize() {
+      window.removeEventListener('mousemove', handleResize);
+      window.removeEventListener('touchmove', handleResize);
+      window.removeEventListener('mouseup', stopResize);
+      window.removeEventListener('touchend', stopResize);
+    }
+
+    window.addEventListener('mousemove', handleResize);
+    window.addEventListener('touchmove', handleResize);
+    window.addEventListener('mouseup', stopResize);
+    window.addEventListener('touchend', stopResize);
+  }
+</script>
+  </scrip>
   <script src="index.js"></script>
-  </body>
+</body>
 </html>
