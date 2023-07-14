@@ -8,16 +8,19 @@ body {
   height: 100vh;
   font-family: Arial, sans-serif;
 }
+/*
 header {
   position: absolute;
   top: -20px;
 height: 30px;
 width: 100%;
 }
+*/
 nav {
 position: absolute;
-top: 30px;
+/*top: 30px;*/
 left: 0;
+  padding:5px;
   width: 50%;
   height: 40px;
   background-color: #333;
