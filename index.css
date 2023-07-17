@@ -161,7 +161,7 @@ textarea {
   border-top: 2px solid #ccc;
   resize: none;
   .copy-btn {
-  top: 70px;
+  top: 5px;
   }
 }
 }
