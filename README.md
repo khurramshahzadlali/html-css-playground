@@ -4,7 +4,7 @@ This is a simple playground that allows you to experiment with HTML, CSS, and Ja
 ## Usage
 To use the playground, simply click on this link:
 
-[HTML-CSS-JS PLAYGROUND](https://khurramshahzadlali.github.io/html-css-playground/)
+[html-css-js playground](https://khurramshahzadlali.github.io/html-css-playground/)
 
 This will open the playground in your default browser. You can then start experimenting with the code!
 
