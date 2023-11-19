@@ -9,8 +9,8 @@ body {
   font-family: Arial, sans-serif;
 } 
 nav {
-position: absolute;
-left: 0;
+  position: absolute;
+  left: 0;
   padding:.25px;
   width: 50%;
   height: 4rem;
@@ -24,12 +24,12 @@ left: 0;
     position: absolute;
     left: 50%;
     width: 50%;
-    height: 4px;
+    height: 60px;
     display: flex;
     justify-content: center;
-    align-items: center;
-   
-  border-bottom: 1px solid #ccc;
+    align-items: center; 
+    border-bottom: 1px solid #ccc;
+
   }
   h3 {
   margin: 0 10px;
